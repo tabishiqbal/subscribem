@@ -9,8 +9,8 @@ feature "Accounts" do
 		fill_in "Password", :with => "password"
 		fill_in "Password confirmation", :with => "password"
 		click_button "Create Account"
+		expect(page).to have_content("Signed in as subscribem@example.com")
 		success_message = "Your account has been successfully created."
 		expect(page).to have_content(success_message)
-		expect(page).to have_content("signed in as subscribem@example.com")
 	end
 end
